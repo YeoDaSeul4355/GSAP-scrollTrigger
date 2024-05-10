@@ -11,7 +11,7 @@
 
 ### 1. 애니메이션 관련 함수
 
-```
+```javascript
 const showDemo = () => {
   // 반복문을 통해 지그재그 교차 애니메이션 (스크롤 트리거)
   gsap.to(".loader", { autoAlpha: 0 });
@@ -38,7 +38,7 @@ const showDemo = () => {
 };
 ```
 
-```
+```javascript
 const awesome = () => {
   const tl = gsap
     .timeline({
@@ -61,7 +61,7 @@ const awesome = () => {
 };
 ```
 
-```
+```javascript
 const tryNow = () => {
   ScrollTrigger.create({
     trigger: ".try",
@@ -76,7 +76,7 @@ const tryNow = () => {
 
 이렇게 함수 안에 애니메이션을 넣고 init함수 안에 다시 한꺼번에 넣어준다.
 
-```
+```javascript
 function init() {
   showDemo();
   awesome();
@@ -86,7 +86,7 @@ function init() {
 
 ### 2. 로딩 관련 함수
 
-```
+```javascript
 const img = gsap.utils.toArray("img");
 const loader = document.querySelector(".loader--text");
 
@@ -114,14 +114,14 @@ imagesLoaded(img)
 - gsap 사용 시 : `const img = gsap.utils.toArray("img");`
 - 보통 자바스크립트 사용 시 :
 
-```
+```javascript
 const img = Array.from(document.querySelectorAll("img"));
 ```
 
-```
+```javascript
 const img = Array.prototype.slice.call(document.querySelectorAll("img"));
 ```
 
-```
+```javascript
 const img = [...document.querySelectorAll("img")];
 ```
