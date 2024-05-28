@@ -1,13 +1,71 @@
-// 🙌 스크롤 스무스 효과
+gsap.registerPlugin(ScrollTrigger);
 
-const container = document.querySelector("#container");
+// 스크롤 요소 설정
+const scrollElement = [
+  {
+    target: document.querySelector("#container"),
+    scrollName: null,
+    marker: "main",
+  },
+  {
+    target: document.querySelector(".deep"),
+    scrollName: null,
+    marker: "deep",
+  },
+];
 
-const scrollbar = Scrollbar.init(container, {
-  // damping값이 낮아질수록 더 부드러워짐
+// 옵션 설정
+const options = {
   damping: 0.05,
   alwaysShowTracks: true,
+};
+
+// 스크롤바 초기화 및 ScrollTrigger 설정
+scrollElement.forEach((elem) => {
+  elem.scrollName = Scrollbar.init(elem.target, { ...options });
+
+  ScrollTrigger.scrollerProxy(elem.target, {
+    scrollTop(value) {
+      if (arguments.length) {
+        elem.scrollName.scrollTop = value;
+      }
+      return elem.scrollName.scrollTop;
+    },
+  });
+
+  elem.scrollName.addListener(ScrollTrigger.update);
 });
 
-// 💥 스크롤 스무스 라이브러리
-// html의 scroll이 작동하는게 아닌 애니메이션 프레임을 통해 스크롤을 처리하기 때문에 scroll관련 이벤트 요소들은 먹지않음
-// 해결책은 해당 라이브러리 내에 있는 메서드 이용.
+// ScrollTrigger 생성
+ScrollTrigger.create({
+  trigger: ".section02",
+  start: "top center",
+  end: "bottom center",
+  scroller: scrollElement[0].target,
+  animation: gsap.to(".section02 h2", { x: 500 }),
+  markers: true,
+  scrub: true,
+  id: scrollElement[0].marker,
+});
+
+ScrollTrigger.create({
+  trigger: ".d2",
+  start: "top center",
+  end: "bottom center",
+  scroller: scrollElement[1].target,
+  animation: gsap.to(".text", { x: 200 }),
+  markers: true,
+  scrub: true,
+  id: scrollElement[1].marker,
+});
+
+// 마커 위치 조정
+scrollElement.forEach((elem) => {
+  if (document.querySelector(".gsap-marker-scroller-start")) {
+    const markers = gsap.utils.toArray(`[class *= "marker-${elem.marker}"]`);
+
+    elem.scrollName.addListener(({ offset }) => {
+      gsap.set(markers, { marginTop: -offset.y });
+    });
+  }
+});

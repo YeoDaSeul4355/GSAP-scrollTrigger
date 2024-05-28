@@ -5,14 +5,12 @@ let smoother = ScrollSmoother.create({
   effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
 });
 
-
-
-gsap.to('.section02 h2', {
+gsap.to(".section02 h2", {
   x: 300,
   scrollTrigger: {
-    trigger: '.section02',
-    start: 'top center',
-    end: 'bottom center',
+    trigger: ".section02",
+    start: "top center",
+    end: "bottom center",
     scrub: 1,
     markers: true,
   },
