@@ -1,63 +1,39 @@
-
-body{
+body {
   overflow: hidden;
 }
 
-section{
+section {
   height: 100vh;
   position: relative;
-  translate:0 0
+  translate: 0 0;
 }
 
-h2{
+h2 {
   font-size: 5vw;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-
-#container{
+#container {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
 
-
-
-.deep{
+.deep {
   width: 50vw;
   height: 100vh;
 }
 
-.deepSection{
+.deepSection {
   width: 100%;
   height: 50vh;
   background: orange;
   overflow-x: hidden;
 }
 
-
-
-.deepSection:nth-child(even){
+.deepSection:nth-child(even) {
   background: dodgerblue;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
