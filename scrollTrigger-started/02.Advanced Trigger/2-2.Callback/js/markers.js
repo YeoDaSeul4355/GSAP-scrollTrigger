@@ -6,5 +6,4 @@ function markers(){
       gsap.set(markers, { marginTop: -offset.y });
     });
   }
-
 }
