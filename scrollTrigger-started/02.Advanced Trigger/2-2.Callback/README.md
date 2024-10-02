@@ -32,3 +32,7 @@ gsap.to(".요소", {
   duration: 2
 });
 ```
+
+### 📎 실습 파일 살펴보기
+- [index.html](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-2.Callback/index.html>)
+- [js/main.js](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-2.Callback/js/main.js>)
