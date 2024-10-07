@@ -12,6 +12,9 @@ const nav = document.querySelector('.nav');
 //   toggleActions: 'restart none none reverse',
 // })
 
+// const section = gsap.utils.toArray('.section').map((section) => section.getBoundingClientRect().top)
+
+// 스크롤 할 때마다 섹션에 맞게끔 헤더 색 변경
 gsap.utils.toArray('.section').forEach((section, index) => {
   ScrollTrigger.create({
     trigger: section,
@@ -23,5 +26,13 @@ gsap.utils.toArray('.section').forEach((section, index) => {
     toggleActions: 'restart none none reverse',
   })
 });
+
+// 네비게이션 클릭해서 해당 섹션으로 이동
+gsap.utils.toArray('.nav li').forEach((li, index) => {
+  li.addEventListener('click', () => {
+    let sectionTop = (ScrollTrigger.getAll()[index].start + nav.offsetHeight);
+    scrollbar.scrollTo(0, sectionTop, 600);
+  })
+})
 
 markers();
