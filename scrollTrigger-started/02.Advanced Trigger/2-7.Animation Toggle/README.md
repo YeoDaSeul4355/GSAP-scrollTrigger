@@ -86,6 +86,6 @@ ScrollTrigger.create({
 ```
 
 ### 📎 실습 파일 살펴보기
-- [index.html](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-5.Navigation Loop/index.html>)
-- [css/style.css](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-5.Navigation Loop/css/style.css>)
-- [js/main.js](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-5.Navigation Loop/js/main.js>)
+- [index.html](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-7.Animation%20Toggle/index.html>)
+- [css/style.css](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-7.Animation%20Toggle/css/style.css>)
+- [js/main.js](<https://github.com/YeoDaSeul4355/GSAP-scrollTrigger/blob/main/scrollTrigger-started/02.Advanced%20Trigger/2-7.Animation%20Toggle/js/main.js>)
